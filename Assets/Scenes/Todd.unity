@@ -177,7 +177,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e87c5b9dde83e3d46b7bb4427f520b15, type: 2}
+  - {fileID: 2100000, guid: 47f523e69fa740b44871f14e2ebbee22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -245,7 +245,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -5029,6 +5029,75 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1001 &800780566
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1400117
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8910941
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4587302668392987624, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: edc8185f5ae527c49a80b5ef7dbde9b2, type: 2}
+    - target: {fileID: -2571118854743697038, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: edc8185f5ae527c49a80b5ef7dbde9b2, type: 2}
+    - target: {fileID: 919132149155446097, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_Name
+      value: RockTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509654439515443377, guid: 02981f631289c984a80b43a968886ddc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: edc8185f5ae527c49a80b5ef7dbde9b2, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 02981f631289c984a80b43a968886ddc, type: 3}
 --- !u!1 &1267322240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5039,6 +5108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1267322242}
   - component: {fileID: 1267322241}
+  - component: {fileID: 1267322243}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -5123,6 +5193,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1267322243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267322240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &2118790007
 GameObject:
   m_ObjectHideFlags: 0
@@ -5222,3 +5315,4 @@ SceneRoots:
   - {fileID: 2118790010}
   - {fileID: 1267322242}
   - {fileID: 365459103}
+  - {fileID: 800780566}
