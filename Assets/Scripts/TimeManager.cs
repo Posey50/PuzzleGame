@@ -26,12 +26,6 @@ public class TimeManager : MonoBehaviour
     private float _maxRange;
 
     /// <summary>
-    /// Interval between every step.
-    /// </summary>
-    [SerializeField]
-    private float _interval;
-
-    /// <summary>
     /// Slider to control the time scale.
     /// </summary>
     private Slider _slider;
@@ -63,14 +57,15 @@ public class TimeManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Called to set the slider by default;
+    /// Called to set the slider by default.
     /// </summary>
     private void SetSlider()
     {
-        _slider.value = _timeScale;
         _slider.minValue = _minRange;
         _slider.maxValue = _maxRange;
+        _slider.value = _timeScale * 2f;
         _slider.onValueChanged.AddListener(OnSliderValueChanged);
+        OnSliderValueChanged(_slider.value);
     }
 
     /// <summary>
@@ -79,7 +74,7 @@ public class TimeManager : MonoBehaviour
     /// <param name="value"> The new value of the slider. </param>
     private void OnSliderValueChanged(float value)
     {
-        _timeScale = _slider.value;
+        _timeScale = _slider.value / 2f;
         TimeChanged?.Invoke(_timeScale);
         Debug.Log(_timeScale);
     }
