@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Piston : MonoBehaviour
+public class PingPong : MonoBehaviour
 {
     /// <summary>
-    /// Range of the piston.
+    /// Range of the ping pong.
     /// </summary>
-    [SerializeField, Range (1, 10)]
+    [SerializeField, Range(1, 10)]
     private int _range;
 
     /// <summary>
@@ -21,14 +21,16 @@ public class Piston : MonoBehaviour
 
     private void Start()
     {
-        _animator = GetComponent<Animator> ();
+        _animator = GetComponent<Animator>();
         _animator.speed = _speed / _range;
-        _animator.Play("Piston" + (_range - 1).ToString());
+        _animator.Play("PingPong" + (_range - 1).ToString());
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireMesh(GetComponent<MeshFilter>().sharedMesh, 0, transform.position + transform.right * _range, transform.rotation, transform.localScale);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireMesh(GetComponent<MeshFilter>().sharedMesh, 0, transform.position - transform.right * _range, transform.rotation, transform.localScale);
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5910551559173629798}
   - component: {fileID: 1457158354321159462}
   - component: {fileID: 7769623926803329536}
-  - component: {fileID: 27049333869783193}
+  - component: {fileID: 6867428630961424979}
   - component: {fileID: 142016321216117003}
   - component: {fileID: 629304293612303118}
   m_Layer: 6
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e3d4a6df82f9a724796b47fd310002e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab73dfbb3c798644c9dcbbf83f50392c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &27049333869783193
+--- !u!114 &6867428630961424979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,21 +130,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2016597154116924264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88911b78287f1e145b0a5c92ae225b26, type: 3}
+  m_Script: {fileID: 11500000, guid: f976e8086836c6f458f9ddf277525e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 1
-  _animators:
-  - {fileID: 9100000, guid: c92cea47fc75c5d418e1ba62c5b5a734, type: 2}
-  - {fileID: 9100000, guid: dc9c7d3cc40266b4f9220db6912671f3, type: 2}
-  - {fileID: 9100000, guid: 130206e8b13d00846b1f486254aa16e5, type: 2}
-  - {fileID: 9100000, guid: e77fa63bb75e82e45865435ab2b8a43d, type: 2}
-  - {fileID: 9100000, guid: 536af05396dbf6e429a8dd7af36692f2, type: 2}
-  - {fileID: 9100000, guid: 6878fb9731adbf446ba275e14f369740, type: 2}
-  - {fileID: 9100000, guid: 3000b711d19afef41870a9349fb9a9ca, type: 2}
-  - {fileID: 9100000, guid: b1ff6edfdcbd5a142ab58426024ea9c2, type: 2}
-  - {fileID: 9100000, guid: 291cb1020809ec649a10fb8251493a6e, type: 2}
-  - {fileID: 9100000, guid: 48d114cc341bd0a40bd17538b6a1d1cc, type: 2}
+  _range: 3
+  _speed: 1
 --- !u!95 &142016321216117003
 Animator:
   serializedVersion: 5
