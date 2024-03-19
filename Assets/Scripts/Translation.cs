@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Translation : MonoBehaviour
@@ -22,4 +23,7 @@ public class Translation : MonoBehaviour
         position = new (position.x + speed * Time.deltaTime * TimeScale, position.y, position.z);
         transform.position = position;
     }
+
+    //leo gros con
+
 }
