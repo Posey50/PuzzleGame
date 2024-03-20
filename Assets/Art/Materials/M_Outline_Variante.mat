@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Outline
-  m_Shader: {fileID: -6465566751694194690, guid: ec3c04708c1000b44987e608263e4462, type: 3}
+  m_Name: M_Outline_Variante
+  m_Shader: {fileID: -6465566751694194690, guid: c747487bfa19bfe40a55b95cbf3e49aa, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -40,7 +40,7 @@ Material:
     - _Outline_THICK: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scale: 1.05
+    - _Scale: 1.03
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
