@@ -76,6 +76,5 @@ public class TimeManager : MonoBehaviour
     {
         _timeScale = _slider.value / 2f;
         TimeChanged?.Invoke(_timeScale);
-        Debug.Log(_timeScale);
     }
 }

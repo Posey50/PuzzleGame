@@ -26,6 +26,11 @@ public class Piston : MonoBehaviour
         _animator.Play("Piston" + (_range - 1).ToString());
     }
 
+    private void FixedUpdate()
+    {
+        _animator.speed = _speed / _range;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
