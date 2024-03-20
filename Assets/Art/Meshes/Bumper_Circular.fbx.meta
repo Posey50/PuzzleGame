@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 60a7b6e8415bd7346b035b52b6922ea9
+guid: 94ecf142eb37e6f48b2251c16cfad06d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Glue
-    second: {fileID: 2100000, guid: 34124294d7cc9e542a02002d61607cca, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
