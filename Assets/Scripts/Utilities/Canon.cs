@@ -2,17 +2,49 @@ using UnityEngine;
 
 public class Canon : MonoBehaviour
 {
+    [Header("General")]
     /// <summary>
-    /// Rigidbody of the ball.
+    /// Socket from which ball is launched.
     /// </summary>
     [SerializeField]
-    private Rigidbody _ballRigidbody;
+    private Transform _ballSocket;
 
     /// <summary>
     /// Force applied to the ball.
     /// </summary>
     [SerializeField, Range(0f, 100f)]
     private float _force;
+
+    /// <summary>
+    /// Ball in the canon.
+    /// </summary>
+    private GameObject _ballInTheCanon;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ball"))
+        {
+            _ballInTheCanon = other.gameObject;
+            SetUpCanon(_ballInTheCanon);
+        }
+    }
+
+    private void SetUpCanon(GameObject ball)
+    {
+        if (ball != null)
+        {
+            ball.GetComponent<Collider>().enabled = false;
+        }
+    }
+
+    #region Preview
+
+    [Header("Preview")]
+    /// <summary>
+    /// Rigidbody of the ball.
+    /// </summary>
+    [SerializeField]
+    private Rigidbody _ballRigidbody;
 
     /// <summary>
     /// The time increment used to calculate the trajectory.
@@ -28,12 +60,6 @@ public class Canon : MonoBehaviour
     /// List of the verticles in the line.
     /// </summary>
     private Vector3[] _linePoints = new Vector3[64];
-
-    /// <summary>
-    /// Initial position of the ball.
-    /// </summary>
-    [SerializeField]
-    private Transform _initialPosition;
 
     /// <summary>
     /// Direction of the shot.
@@ -77,7 +103,7 @@ public class Canon : MonoBehaviour
     public void PredictTrajectory()
     {
         Vector3 velocity = _direction * (_force / _mass);
-        Vector3 position = _initialPosition.position;
+        Vector3 position = _ballSocket.position;
         Vector3 nextPosition;
         float overlap;
 
@@ -162,4 +188,5 @@ public class Canon : MonoBehaviour
         Gizmos.DrawLineList(_linePoints);
     }
 #endif
+    #endregion
 }
