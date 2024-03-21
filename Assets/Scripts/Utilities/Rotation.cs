@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Rotation : MonoBehaviour
@@ -23,7 +22,6 @@ public class Rotation : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _animator.speed = _rotationSpeed;
         _animator.Play("Rotation" + _axe.ToString());
     }
 
@@ -31,6 +29,32 @@ public class Rotation : MonoBehaviour
     {
         _animator.speed = _rotationSpeed;
     }
+
+    #region Preview
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        switch (_axe.ToString())
+        {
+            case "X":
+                Gizmos.color = Color.red;
+                Gizmos.DrawRay(transform.position, transform.right * 2f);
+                Gizmos.DrawRay(transform.position, -transform.right * 2f);
+                break;
+            case "Y":
+                Gizmos.color = Color.green;
+                Gizmos.DrawRay(transform.position, transform.up * 2f);
+                Gizmos.DrawRay(transform.position, -transform.up * 2f);
+                break;
+            case "Z":
+                Gizmos.color = Color.blue;
+                Gizmos.DrawRay(transform.position, transform.forward * 2f);
+                Gizmos.DrawRay(transform.position, -transform.forward * 2f);
+                break;
+        }
+    }
+#endif
+    #endregion
 }
 
 public enum Axe

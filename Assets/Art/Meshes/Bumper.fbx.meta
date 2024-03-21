@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 60a7b6e8415bd7346b035b52b6922ea9
+guid: 1a6c6f182104a3c438b22d1eef7fc15d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Glue
-    second: {fileID: 2100000, guid: 34124294d7cc9e542a02002d61607cca, type: 2}
+      name: M_Bumper
+    second: {fileID: 2100000, guid: 62518bbda3595ea4d8b27a5248d43325, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
