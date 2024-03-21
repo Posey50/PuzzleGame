@@ -25,6 +25,11 @@ public class Canon : MonoBehaviour
     /// </summary>
     private Animator _animator;
 
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ball"))
@@ -47,6 +52,8 @@ public class Canon : MonoBehaviour
             ball.GetComponent<Collider>().enabled = false;
             ball.transform.position = _ballSocket.position;
             ball.transform.SetParent(_ballSocket, true);
+
+            _animator.Play("Load");
         }
         else
         {
