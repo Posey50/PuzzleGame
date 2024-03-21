@@ -11,7 +11,7 @@ public class TimeManager : MonoBehaviour
     /// <summary>
     /// Time scale used by the environment.
     /// </summary>
-    private float _timeScale;
+    public float TimeScale {  get; private set; }
 
     /// <summary>
     /// Minimum of the time scale.
@@ -51,7 +51,7 @@ public class TimeManager : MonoBehaviour
     {
         _slider = GetComponent<Slider>();
 
-        _timeScale = 1f;
+        TimeScale = 1f;
 
         SetSlider();
     }
@@ -63,7 +63,7 @@ public class TimeManager : MonoBehaviour
     {
         _slider.minValue = _minRange;
         _slider.maxValue = _maxRange;
-        _slider.value = _timeScale * 2f;
+        _slider.value = TimeScale * 2f;
         _slider.onValueChanged.AddListener(OnSliderValueChanged);
         OnSliderValueChanged(_slider.value);
     }
@@ -74,7 +74,7 @@ public class TimeManager : MonoBehaviour
     /// <param name="value"> The new value of the slider. </param>
     private void OnSliderValueChanged(float value)
     {
-        _timeScale = _slider.value / 2f;
-        TimeChanged?.Invoke(_timeScale);
+        TimeScale = _slider.value / 2f;
+        TimeChanged?.Invoke(TimeScale);
     }
 }

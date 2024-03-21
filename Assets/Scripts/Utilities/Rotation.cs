@@ -56,10 +56,3 @@ public class Rotation : MonoBehaviour
 #endif
     #endregion
 }
-
-public enum Axe
-{
-    X,
-    Y, 
-    Z
-}

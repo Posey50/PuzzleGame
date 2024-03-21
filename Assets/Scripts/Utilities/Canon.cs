@@ -47,13 +47,12 @@ public class Canon : MonoBehaviour
     {
         if (ball != null)
         {
+            _animator.Play("Load");
+
             ball.GetComponent<Rigidbody>().isKinematic = true;
             ball.GetComponent<MeshRenderer>().enabled = false;
             ball.GetComponent<Collider>().enabled = false;
             ball.transform.position = _ballSocket.position;
-            ball.transform.SetParent(_ballSocket, true);
-
-            _animator.Play("Load");
         }
         else
         {
@@ -70,16 +69,31 @@ public class Canon : MonoBehaviour
         {
             Rigidbody ballRigidbody = _ballInTheCanon.GetComponent<Rigidbody>();
             ballRigidbody.isKinematic = false;
-            ballRigidbody.AddForce(transform.forward * _force, ForceMode.Impulse);
+            ballRigidbody.AddForce(transform.forward * _force * TimeManager.Instance.TimeScale, ForceMode.Impulse);
 
             _ballInTheCanon.GetComponent<MeshRenderer>().enabled = true;
             _ballInTheCanon.GetComponent<Collider>().enabled = true;
-            _ballInTheCanon.transform.SetParent(null, true);
         }
         else
         {
             Debug.LogError("No ball in the canon");
         }
+    }
+
+    /// <summary>
+    /// Called to return to idle animation.
+    /// </summary>
+    public void ReturnToIdle()
+    {
+        _animator.Play("Idle");
+    }
+
+    /// <summary>
+    /// Called to return to idle animation.
+    /// </summary>
+    public void LaunchShotAnim()
+    {
+        _animator.Play("Shot");
     }
 
     #region Preview
