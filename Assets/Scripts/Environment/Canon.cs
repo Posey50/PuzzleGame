@@ -194,7 +194,7 @@ public class Canon : MonoBehaviour
     }
 
     /// <summary>
-    /// Called to set line count and an induvidual position at the same time.
+    /// Called to set line count and an individual position at the same time.
     /// </summary>
     /// <param name="count"> Number of points in the line. </param>
     /// <param name="pointPos"> The position of an individual point. </param>
