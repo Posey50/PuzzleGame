@@ -1,9 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Trampoline : MonoBehaviour
+public class Bumper : MonoBehaviour
 {
     /// <summary>
-    /// Animator of the trampoline.
+    /// Animator of the bumper.
     /// </summary>
     private Animator _animator;
 
@@ -16,7 +18,7 @@ public class Trampoline : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            _animator.Play("TrampolineBounce");
+            _animator.Play("BumperBounce");
         }
     }
 
