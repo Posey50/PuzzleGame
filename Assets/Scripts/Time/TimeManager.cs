@@ -30,7 +30,11 @@ public class TimeManager : MonoBehaviour
     /// </summary>
     private Slider _slider;
 
-    public delegate void TimeDelegate(float health);
+    /// <summary>
+    /// Event to indicate the new time scale to all objects who depend on it.
+    /// </summary>
+    /// <param name="timeScale"> New time scale. </param>
+    public delegate void TimeDelegate(float timeScale);
     public event TimeDelegate TimeChanged;
 
     private void Awake()

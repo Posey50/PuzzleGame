@@ -114,7 +114,7 @@ public class Translation : MonoBehaviour
         }
         else
         {
-            Debug.LogError("There is no object to move in " + this.gameObject.name);
+            Debug.LogError("There is no object to move attached to " + this.gameObject.name);
         }
     }
 #endif

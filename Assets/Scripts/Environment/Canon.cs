@@ -153,7 +153,7 @@ public class Canon : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Missing ball rigid body in " + this.gameObject.name);
+            Debug.LogError("There is no ball rigid body attached to " + this.gameObject.name);
         }
     }
 
