@@ -20,6 +20,11 @@ public class Canon : MonoBehaviour
     /// </summary>
     private GameObject _ballInTheCanon;
 
+    /// <summary>
+    /// Animator of the canon.
+    /// </summary>
+    private Animator _animator;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ball"))
@@ -29,6 +34,10 @@ public class Canon : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called to load the canon with the ball.
+    /// </summary>
+    /// <param name="ball"> Ball to load. </param>
     private void SetUpCanon(GameObject ball)
     {
         if (ball != null)
@@ -45,6 +54,9 @@ public class Canon : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called to throw the ball.
+    /// </summary>
     public void Shot()
     {
         if (_ballInTheCanon != null)
