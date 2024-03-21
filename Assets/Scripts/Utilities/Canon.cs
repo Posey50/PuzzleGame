@@ -33,7 +33,33 @@ public class Canon : MonoBehaviour
     {
         if (ball != null)
         {
+            ball.GetComponent<Rigidbody>().isKinematic = true;
+            ball.GetComponent<MeshRenderer>().enabled = false;
             ball.GetComponent<Collider>().enabled = false;
+            ball.transform.position = _ballSocket.position;
+            ball.transform.SetParent(_ballSocket, true);
+        }
+        else
+        {
+            Debug.LogError("No ball to load");
+        }
+    }
+
+    public void Shot()
+    {
+        if (_ballInTheCanon != null)
+        {
+            Rigidbody ballRigidbody = _ballInTheCanon.GetComponent<Rigidbody>();
+            ballRigidbody.isKinematic = false;
+            ballRigidbody.AddForce(transform.forward * _force, ForceMode.Impulse);
+
+            _ballInTheCanon.GetComponent<MeshRenderer>().enabled = true;
+            _ballInTheCanon.GetComponent<Collider>().enabled = true;
+            _ballInTheCanon.transform.SetParent(null, true);
+        }
+        else
+        {
+            Debug.LogError("No ball in the canon");
         }
     }
 
@@ -190,3 +216,4 @@ public class Canon : MonoBehaviour
 #endif
     #endregion
 }
+ 

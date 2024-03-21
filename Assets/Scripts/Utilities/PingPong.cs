@@ -22,7 +22,6 @@ public class PingPong : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _animator.speed = _speed / _range;
         _animator.Play("PingPong" + (_range - 1).ToString());
     }
 
@@ -31,6 +30,8 @@ public class PingPong : MonoBehaviour
         _animator.speed = _speed / _range;
     }
 
+    #region Preview
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -38,4 +39,6 @@ public class PingPong : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireMesh(GetComponent<MeshFilter>().sharedMesh, 0, transform.position - transform.right * _range, transform.rotation, transform.localScale);
     }
+#endif
+    #endregion
 }
