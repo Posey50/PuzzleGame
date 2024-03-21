@@ -51,6 +51,7 @@ public class Canon : MonoBehaviour
 
             ball.GetComponent<Rigidbody>().isKinematic = true;
             ball.GetComponent<MeshRenderer>().enabled = false;
+            ball.GetComponent<ParticleSystem>().Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
             ball.GetComponent<Collider>().enabled = false;
             ball.transform.position = _ballSocket.position;
         }
@@ -70,8 +71,8 @@ public class Canon : MonoBehaviour
             Rigidbody ballRigidbody = _ballInTheCanon.GetComponent<Rigidbody>();
             ballRigidbody.isKinematic = false;
             ballRigidbody.AddForce(transform.forward * _force * TimeManager.Instance.TimeScale, ForceMode.Impulse);
-
             _ballInTheCanon.GetComponent<MeshRenderer>().enabled = true;
+            _ballInTheCanon.GetComponent<ParticleSystem>().Play();
             _ballInTheCanon.GetComponent<Collider>().enabled = true;
         }
         else
