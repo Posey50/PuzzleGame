@@ -311,3 +311,4 @@ MonoBehaviour:
   _force: 50
   _visualBoost: {fileID: 808678877049753827}
   _reverseVisualBoost: {fileID: 780139272177018001}
+  _ballBoostParticles: {fileID: 1546780292459799941, guid: c106be9964aa3bb48a3e662b76d0a7ed, type: 3}

@@ -19,6 +19,12 @@ public class Boost : MonoBehaviour
     [SerializeField]
     private GameObject _visualBoost, _reverseVisualBoost;
 
+    /// <summary>
+    /// Particle system when ball is boosted.
+    /// </summary>
+    [SerializeField]
+    private GameObject _ballBoostParticles;
+
     private void Start()
     {
         _currentDirection = transform.right;
@@ -29,6 +35,9 @@ public class Boost : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             other.GetComponent<Rigidbody>().AddForce(_currentDirection * _force, ForceMode.Acceleration);
+
+            GameObject particles = Instantiate(_ballBoostParticles, other.transform.position, Quaternion.identity);
+            particles.transform.forward = -_currentDirection;
         }
     }
 
