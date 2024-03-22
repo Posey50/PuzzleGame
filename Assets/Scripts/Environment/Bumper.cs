@@ -13,7 +13,7 @@ public class Bumper : MonoBehaviour
     [SerializeField, Range(1f, 10f)]
     private float _bounceForce;
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
     }

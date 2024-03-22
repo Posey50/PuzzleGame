@@ -37,10 +37,13 @@ public class Translation : MonoBehaviour
     /// </summary>
     private Animator _animator;
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
+    }
 
+    private void Start()
+    {
         if (_movementType != MovementType.None)
         {
             _animator.Play(_movementType.ToString() + _range.ToString() + _axe.ToString());

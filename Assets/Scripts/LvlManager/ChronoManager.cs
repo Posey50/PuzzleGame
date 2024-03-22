@@ -45,6 +45,7 @@ public class ChronoManager : MonoBehaviour
         _nbrOfSeconds = 0;
         _nbrOfMinutes = 0;
 
+        LvlArrival.Instance.EndReached += StopChrono;
         _increaseChrono = StartCoroutine(IncreaseChrono());
     }
 

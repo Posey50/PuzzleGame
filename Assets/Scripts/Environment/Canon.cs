@@ -25,7 +25,7 @@ public class Canon : MonoBehaviour
     /// </summary>
     private Animator _animator;
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
     }

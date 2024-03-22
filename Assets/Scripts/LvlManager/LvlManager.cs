@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 public class LvlManager : MonoBehaviour
 {
@@ -7,26 +6,31 @@ public class LvlManager : MonoBehaviour
     private static LvlManager _instance = null;
     public static LvlManager Instance => _instance;
 
-    [Header("Third star timer")]
     /// <summary>
     /// Timing not to exceed to have the third star.
     /// </summary>
-    [SerializeField]
-    private int _minutes;
-    [SerializeField]
-    private int seconds;
+    [field : SerializeField]
+    public int Minutes {  get; private set; }
 
-    [Header("Lvl datas")]
+    [field: SerializeField]
+    public int Seconds { get; private set; }
+
     /// <summary>
     /// Number of life to finish the lvl.
     /// </summary>
-    [SerializeField]
-    private int _nbrOfLife;
+    [field : SerializeField]
+    public int NbrOfLife { get; private set; }
 
     /// <summary>
     /// Current number of life.
     /// </summary>
-    private int _currentNbrOfLife;
+    public int CurrentNbrOfLife { get; private set; }
+
+    /// <summary>
+    /// Window where results are showed.
+    /// </summary>
+    [SerializeField]
+    private GameObject _resultWindow;
 
     /// <summary>
     /// Event to indicate lvl state.
@@ -56,8 +60,9 @@ public class LvlManager : MonoBehaviour
 
     private void Start()
     {
-        _currentNbrOfLife = _nbrOfLife;
-        NewNumberOfLifes?.Invoke(_currentNbrOfLife);
+        CurrentNbrOfLife = NbrOfLife;
+        NewNumberOfLifes?.Invoke(CurrentNbrOfLife);
+        LvlArrival.Instance.EndReached += GameIsOver;
     }
 
     /// <summary>
@@ -65,10 +70,10 @@ public class LvlManager : MonoBehaviour
     /// </summary>
     public void RespawnABall()
     {
-        if (_currentNbrOfLife - 1 >= 0)
+        if (CurrentNbrOfLife - 1 >= 0)
         {
-            _currentNbrOfLife--;
-            NewNumberOfLifes?.Invoke(_currentNbrOfLife);
+            CurrentNbrOfLife--;
+            NewNumberOfLifes?.Invoke(CurrentNbrOfLife);
             NeedABall?.Invoke();
         }
         else
@@ -78,10 +83,10 @@ public class LvlManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Called when the game is over.
+    /// Called when the game is over to show result window.
     /// </summary>
     private void GameIsOver()
     {
-        Debug.Log("GameOver");
+        _resultWindow.SetActive(true);
     }
 }

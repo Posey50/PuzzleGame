@@ -8,9 +8,13 @@ public class LifeUI : MonoBehaviour
     /// </summary>
     private TMP_Text _remainingLifes;
 
-    private void Start()
+    private void Awake()
     {
         _remainingLifes = GetComponent<TMP_Text>();
+    }
+
+    private void Start()
+    {
         LvlManager.Instance.NewNumberOfLifes += UpdateUI;
     }
 
