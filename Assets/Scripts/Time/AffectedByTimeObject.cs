@@ -10,10 +10,10 @@ public class ObjectAffectedByTime : MonoBehaviour
     /// <summary>
     /// Object which will be affected.
     /// </summary>
-    [field : SerializeField]
-    public MeshRenderer ObjectAffected {  get; private set; }
+    [field: SerializeField]
+    public MeshRenderer ObjectAffected { get; private set; }
 
-    void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
     }

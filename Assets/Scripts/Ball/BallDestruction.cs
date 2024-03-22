@@ -8,6 +8,11 @@ public class BallDestruction : MonoBehaviour
     public delegate void BallDelegate();
     public event BallDelegate BallIsDestroyed;
 
+    /// <summary>
+    /// A value indicating that the ball has already been destroyed.
+    /// </summary>
+    private bool _isAlreadyDestroyed;
+
     private void Start()
     {
         BallIsDestroyed += LvlManager.Instance.RespawnABall;
@@ -18,7 +23,11 @@ public class BallDestruction : MonoBehaviour
     /// </summary>
     public void DestroySelf()
     {
-        BallIsDestroyed?.Invoke();
-        Destroy(gameObject);
+        if (!_isAlreadyDestroyed)
+        {
+            _isAlreadyDestroyed = true;
+            BallIsDestroyed?.Invoke();
+            Destroy(gameObject);
+        }
     }
 }
