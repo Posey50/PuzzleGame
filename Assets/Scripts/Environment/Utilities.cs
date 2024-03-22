@@ -11,3 +11,9 @@ public enum MovementType
     PingPong,
     Piston
 }
+
+public enum TimeType
+{
+    Constant,
+    Alternate
+}
