@@ -527,7 +527,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Piston9
+  m_Name: Piston9X
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -553,7 +553,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Piston8
+  m_Name: Piston8X
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -1075,7 +1075,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Piston10
+  m_Name: Piston10X
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
