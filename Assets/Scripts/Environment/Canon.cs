@@ -68,6 +68,7 @@ public class Canon : MonoBehaviour
     {
         if (_ballInTheCanon != null)
         {
+            _ballSocket.GetComponent<ParticleSystem>().Play();
             Rigidbody ballRigidbody = _ballInTheCanon.GetComponent<Rigidbody>();
             ballRigidbody.isKinematic = false;
             ballRigidbody.AddForce(transform.forward * _force * TimeManager.Instance.TimeScale, ForceMode.Impulse);
