@@ -7,6 +7,12 @@ public class Trampoline : MonoBehaviour
     /// </summary>
     private Animator _animator;
 
+    /// <summary>
+    /// Multiplier applied on the bounce.
+    /// </summary>
+    [SerializeField, Range(1f, 10f)]
+    private float _bounceForce;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -17,6 +23,7 @@ public class Trampoline : MonoBehaviour
         if (collision.gameObject.CompareTag("Ball"))
         {
             _animator.Play("TrampolineBounce");
+            collision.gameObject.GetComponent<Rigidbody>().velocity *= _bounceForce;
         }
     }
 
