@@ -71,7 +71,7 @@ public class Canon : MonoBehaviour
             _ballSocket.GetComponent<ParticleSystem>().Play();
             Rigidbody ballRigidbody = _ballInTheCanon.GetComponent<Rigidbody>();
             ballRigidbody.isKinematic = false;
-            ballRigidbody.AddForce(transform.forward * _force * TimeManager.Instance.TimeScale, ForceMode.Impulse);
+            ballRigidbody.AddForce(transform.forward * _force , ForceMode.Impulse);
             _ballInTheCanon.GetComponent<MeshRenderer>().enabled = true;
             _ballInTheCanon.GetComponent<ParticleSystem>().Play();
             _ballInTheCanon.GetComponent<Collider>().enabled = true;
@@ -89,6 +89,8 @@ public class Canon : MonoBehaviour
     {
         _animator.Play("Idle");
     }
+
+    //caca
 
     /// <summary>
     /// Called to return to idle animation.
