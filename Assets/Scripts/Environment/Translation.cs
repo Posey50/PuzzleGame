@@ -43,7 +43,7 @@ public class Translation : MonoBehaviour
 
         if (_movementType != MovementType.None)
         {
-            _animator.Play(_movementType.ToString() + (_range - 1).ToString() + _axe.ToString());
+            _animator.Play(_movementType.ToString() + (_range).ToString() + _axe.ToString());
         }
         else
         {
@@ -114,7 +114,7 @@ public class Translation : MonoBehaviour
         }
         else
         {
-            Debug.LogError("There is no object to move in " + this.gameObject.name);
+            Debug.LogError("There is no object to move attached to " + this.gameObject.name);
         }
     }
 #endif
