@@ -880,6 +880,7 @@ Transform:
   m_Children:
   - {fileID: 2004063171}
   - {fileID: 1518792709}
+  - {fileID: 1930279547}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &393341101 stripped
@@ -6627,6 +6628,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minRange: -2
   _maxRange: 2
+  _slider: {fileID: 0}
+  _timeType: 0
+  _delayBetweenChanges: 0
+  _goldMaterial: {fileID: 0}
+  _diamondMaterial: {fileID: 0}
+  _objectsAffectedByTime: []
+  _objectsNotAffectedByTime: []
 --- !u!1 &1200212446
 GameObject:
   m_ObjectHideFlags: 0
@@ -8969,6 +8977,59 @@ MonoBehaviour:
   _minutes: {fileID: 1639046785}
   _seconds: {fileID: 2144092900}
   _centiseconds: {fileID: 479802637}
+--- !u!1 &1930279546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1930279547}
+  - component: {fileID: 1930279548}
+  m_Layer: 0
+  m_Name: TimeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1930279547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930279546}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 367398857}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1930279548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930279546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 416b7067c0681cf4698d6d6676343fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minRange: -2
+  _maxRange: 2
+  _slider: {fileID: 1111041938}
+  _timeType: 0
+  _delayBetweenChanges: 0
+  _goldMaterial: {fileID: 2100000, guid: ca6202438708654439ebdcf66092377f, type: 2}
+  _diamondMaterial: {fileID: 2100000, guid: 6650f80571bc10349a921168101182ef, type: 2}
+  _objectsAffectedByTime: []
+  _objectsNotAffectedByTime: []
 --- !u!1001 &1931599079
 PrefabInstance:
   m_ObjectHideFlags: 0
