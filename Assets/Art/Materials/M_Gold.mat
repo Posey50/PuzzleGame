@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Gold
+  m_Name: M_Gold
   m_Shader: {fileID: -6465566751694194690, guid: 859cf6e29e812cd4ba0af0f9d04fafaa, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -50,7 +50,7 @@ Material:
     - _Smoothness: 0.05
     - _Specular: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.89510924, b: 0.2028302, a: 0}
+    - _Color: {r: 1, g: 0.9529463, b: 0.6462264, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2636174268658596357
 MonoBehaviour:
