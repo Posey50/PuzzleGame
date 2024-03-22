@@ -8,6 +8,11 @@ public class BallDestruction : MonoBehaviour
     public delegate void BallDelegate();
     public event BallDelegate BallIsDestroyed;
 
+    private void Start()
+    {
+        BallIsDestroyed += LvlManager.Instance.RespawnABall;
+    }
+
     /// <summary>
     /// Called to destroy the ball.
     /// </summary>

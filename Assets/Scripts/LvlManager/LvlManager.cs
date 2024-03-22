@@ -64,7 +64,15 @@ public class LvlManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("GameOver");
+            GameIsOver();
         }
+    }
+
+    /// <summary>
+    /// Called when the game is over.
+    /// </summary>
+    private void GameIsOver()
+    {
+        Debug.Log("GameOver");
     }
 }

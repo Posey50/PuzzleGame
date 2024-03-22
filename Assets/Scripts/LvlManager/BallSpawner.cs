@@ -18,8 +18,7 @@ public class BallSpawner : MonoBehaviour
     {
         if (_ball != null)
         {
-            GameObject newBall = Instantiate(_ball, transform.position, _ball.transform.rotation);
-            newBall.GetComponent<BallDestruction>().BallIsDestroyed += LvlManager.Instance.RespawnABall;
+            Instantiate(_ball, transform.position, _ball.transform.rotation);
         }
     }
 
