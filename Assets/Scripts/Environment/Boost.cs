@@ -50,14 +50,4 @@ public class Boost : MonoBehaviour
             _reverseVisualBoost.SetActive(true);
         }
     }
-
-    #region Preview
-#if UNITY_EDITOR
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, GetComponent<BoxCollider>().size);
-    }
-#endif
-    #endregion
 }
