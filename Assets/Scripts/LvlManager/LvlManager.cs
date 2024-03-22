@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class LvlManager : MonoBehaviour
 {
@@ -33,6 +34,12 @@ public class LvlManager : MonoBehaviour
     public delegate void LvlDelegate();
     public event LvlDelegate NeedABall;
 
+    /// <summary>
+    /// Event to indicate remaining lifes.
+    /// </summary>
+    public delegate void LifesDelegate(int remainingLifes);
+    public event LifesDelegate NewNumberOfLifes;
+
     private void Awake()
     {
         // Singleton
@@ -50,6 +57,7 @@ public class LvlManager : MonoBehaviour
     private void Start()
     {
         _currentNbrOfLife = _nbrOfLife;
+        NewNumberOfLifes?.Invoke(_currentNbrOfLife);
     }
 
     /// <summary>
@@ -60,6 +68,7 @@ public class LvlManager : MonoBehaviour
         if (_currentNbrOfLife - 1 >= 0)
         {
             _currentNbrOfLife--;
+            NewNumberOfLifes?.Invoke(_currentNbrOfLife);
             NeedABall?.Invoke();
         }
         else
