@@ -193,6 +193,10 @@ PrefabInstance:
       propertyPath: _objectToMove
       value: 
       objectReference: {fileID: 2106141587176898540}
+    - target: {fileID: 8783985179077609694, guid: 1bf1854ed782d2d46b263d758b1f9404, type: 3}
+      propertyPath: <ObjectAffected>k__BackingField
+      value: 
+      objectReference: {fileID: 2811492282536560831}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7264318339402502110, guid: 1bf1854ed782d2d46b263d758b1f9404, type: 3}
