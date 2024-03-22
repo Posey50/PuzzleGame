@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8902518854636474507}
   m_Layer: 6
   m_Name: Trampoline
-  m_TagString: Untagged
+  m_TagString: CantDestroyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 254630424487505690}
   m_Layer: 6
   m_Name: TrampolineParent
-  m_TagString: Untagged
+  m_TagString: CantDestroyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 35165762325151431}
   m_Layer: 6
   m_Name: TrampolineTranslation
-  m_TagString: Untagged
+  m_TagString: CantDestroyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

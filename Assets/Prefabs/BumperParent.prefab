@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5639076586603272643}
   m_Layer: 6
   m_Name: BumperParent
-  m_TagString: Untagged
+  m_TagString: CantDestroyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 5322557604200445495}
   m_Layer: 6
   m_Name: Bumper_Circular
-  m_TagString: Untagged
+  m_TagString: CantDestroyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 8001940593167235562}
   m_Layer: 6
   m_Name: Bumper_Circular_Center
-  m_TagString: Untagged
+  m_TagString: CantDestroyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 3423507845783823496}
   m_Layer: 6
   m_Name: BumperTranslation
-  m_TagString: Untagged
+  m_TagString: CantDestroyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 2751564292585596896}
   m_Layer: 6
   m_Name: Bumper Circular
-  m_TagString: Untagged
+  m_TagString: CantDestroyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
