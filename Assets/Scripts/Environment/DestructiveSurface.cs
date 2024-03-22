@@ -1,13 +1,12 @@
 using UnityEngine;
 
-public class LvlArrival : MonoBehaviour
+public class DestructiveSurface : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ball"))
         {
-            other.gameObject.SetActive(false);
-            Debug.Log("Win");
+            Destroy(other.gameObject);
         }
     }
 }

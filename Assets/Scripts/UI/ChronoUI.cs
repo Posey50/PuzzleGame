@@ -4,22 +4,10 @@ using TMPro;
 public class ChronoUI : MonoBehaviour
 {
     /// <summary>
-    /// Minutes on screen.
+    /// Minutes, seconds and centiseconds on screen.
     /// </summary>
     [SerializeField]
-    private TMP_Text _minutes;
-
-    /// <summary>
-    /// Seconds on screen.
-    /// </summary>
-    [SerializeField]
-    private TMP_Text _seconds;
-
-    /// <summary>
-    /// Centiseconds on screen.
-    /// </summary>
-    [SerializeField]
-    private TMP_Text _centiseconds;
+    private TMP_Text _minutes, _seconds, _centiseconds;
 
     private void Start()
     {

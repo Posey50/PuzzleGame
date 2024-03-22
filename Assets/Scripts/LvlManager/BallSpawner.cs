@@ -10,6 +10,7 @@ public class BallSpawner : MonoBehaviour
 
     private void Start()
     {
+        LvlManager.Instance.NeedABall += SpawnABall;
         SpawnABall();
     }
 
@@ -17,7 +18,8 @@ public class BallSpawner : MonoBehaviour
     {
         if (_ball != null)
         {
-            Instantiate(_ball, transform.position, _ball.transform.rotation);
+            GameObject newBall = Instantiate(_ball, transform.position, _ball.transform.rotation);
+            newBall.GetComponent<BallDestruction>().BallIsDestroyed += LvlManager.Instance.RespawnABall;
         }
     }
 

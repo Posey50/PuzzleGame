@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5581045756936028443}
   - component: {fileID: 7246596799139415048}
   - component: {fileID: 3883283883174261119}
+  - component: {fileID: 3656275162198416982}
   m_Layer: 0
   m_Name: Pepe
   m_TagString: Ball
@@ -4933,3 +4934,15 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &3656275162198416982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562979236247919971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245b38aa4b84d5641a16c0e83024343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

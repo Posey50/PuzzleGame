@@ -7,22 +7,11 @@ public class ChronoManager : MonoBehaviour
     // Singleton
     private static ChronoManager _instance = null;
     public static ChronoManager Instance => _instance;
-    //
 
     /// <summary>
-    /// Current number of centiseconds.
+    /// Current number of minutes, seconds and centiseconds.
     /// </summary>
-    private int _nbrOfCentiseconds;
-
-    /// <summary>
-    /// Current number of seconds.
-    /// </summary>
-    private int _nbrOfSeconds;
-
-    /// <summary>
-    /// Current number of minutes.
-    /// </summary>
-    private int _nbrOfMinutes;
+    private int _nbrOfMinutes, _nbrOfSeconds, _nbrOfCentiseconds;
 
     /// <summary>
     /// Coroutine which increase the time.
@@ -30,13 +19,11 @@ public class ChronoManager : MonoBehaviour
     private Coroutine _increaseChrono;
 
     /// <summary>
-    /// Events to indicate to that there is a new time.
+    /// Events to indicate that there is a new time.
     /// </summary>
     /// <param name="newTime"> New time to declare. </param>
     public delegate void ChronoDelegate(int newTime);
-    public event ChronoDelegate NewCentisecond;
-    public event ChronoDelegate NewSecond;
-    public event ChronoDelegate NewMinute;
+    public event ChronoDelegate NewCentisecond, NewSecond, NewMinute;
 
     private void Awake()
     {
@@ -50,7 +37,6 @@ public class ChronoManager : MonoBehaviour
         {
             _instance = this;
         }
-        //
     }
 
     private void Start()
