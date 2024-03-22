@@ -74,13 +74,6 @@ public class TimeManager : MonoBehaviour
     public delegate void TimeDelegate(float timeScale);
     public event TimeDelegate TimeChanged;
 
-    /// <summary>
-    /// Event to indicate that the time influence has changed.
-    /// </summary>
-    /// <param name="timeScale"> New time scale. </param>
-    public delegate void InfluenceDelegate();
-    public event InfluenceDelegate InfluenceChanged;
-
     private void Awake()
     {
         // Singleton

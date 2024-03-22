@@ -62,54 +62,57 @@ public class Translation : MonoBehaviour
     {
         if (_objectToMove != null)
         {
-            switch (_movementType.ToString())
+            if (_objectToMove.GetComponent<MeshRenderer>() != null)
             {
-                case "PingPong":
-                    switch (_axe.ToString())
-                    {
-                        case "X":
-                            Gizmos.color = Color.green;
-                            Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position + transform.right * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
-                            Gizmos.color = Color.red;
-                            Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position - transform.right * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
-                            break;
-                        case "Y":
-                            Gizmos.color = Color.green;
-                            Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position + transform.up * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
-                            Gizmos.color = Color.red;
-                            Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position - transform.up * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
-                            break;
-                        case "Z":
-                            Gizmos.color = Color.green;
-                            Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position + transform.forward * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
-                            Gizmos.color = Color.red;
-                            Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position - transform.forward * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case "Piston":
-                    switch (_axe.ToString())
-                    {
-                        case "X":
-                            Gizmos.color = Color.green;
-                            Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position + transform.right * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
-                            break;
-                        case "Y":
-                            Gizmos.color = Color.green;
-                            Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position + transform.up * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
-                            break;
-                        case "Z":
-                            Gizmos.color = Color.green;
-                            Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position + transform.forward * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                default:
-                    break;
+                switch (_movementType.ToString())
+                {
+                    case "PingPong":
+                        switch (_axe.ToString())
+                        {
+                            case "X":
+                                Gizmos.color = Color.green;
+                                Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position + transform.right * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
+                                Gizmos.color = Color.red;
+                                Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position - transform.right * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
+                                break;
+                            case "Y":
+                                Gizmos.color = Color.green;
+                                Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position + transform.up * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
+                                Gizmos.color = Color.red;
+                                Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position - transform.up * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
+                                break;
+                            case "Z":
+                                Gizmos.color = Color.green;
+                                Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position + transform.forward * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
+                                Gizmos.color = Color.red;
+                                Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position - transform.forward * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case "Piston":
+                        switch (_axe.ToString())
+                        {
+                            case "X":
+                                Gizmos.color = Color.green;
+                                Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position + transform.right * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
+                                break;
+                            case "Y":
+                                Gizmos.color = Color.green;
+                                Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position + transform.up * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
+                                break;
+                            case "Z":
+                                Gizmos.color = Color.green;
+                                Gizmos.DrawWireMesh(_objectToMove.GetComponent<MeshFilter>().sharedMesh, 0, _objectToMove.transform.position + transform.forward * _range, _objectToMove.transform.rotation, _objectToMove.transform.localScale);
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
         }
         else
