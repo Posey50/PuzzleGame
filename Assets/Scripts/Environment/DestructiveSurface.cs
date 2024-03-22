@@ -6,7 +6,7 @@ public class DestructiveSurface : MonoBehaviour
     {
         if (other.CompareTag("Ball"))
         {
-            Destroy(other.gameObject);
+            other.GetComponent<BallDestruction>().DestroySelf();
         }
     }
 }

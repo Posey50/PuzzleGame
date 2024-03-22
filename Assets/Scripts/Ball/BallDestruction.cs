@@ -8,8 +8,12 @@ public class BallDestruction : MonoBehaviour
     public delegate void BallDelegate();
     public event BallDelegate BallIsDestroyed;
 
-    public void OnDestroy()
+    /// <summary>
+    /// Called to destroy the ball.
+    /// </summary>
+    public void DestroySelf()
     {
         BallIsDestroyed?.Invoke();
+        Destroy(gameObject);
     }
 }
