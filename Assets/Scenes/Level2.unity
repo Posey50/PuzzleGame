@@ -16065,6 +16065,10 @@ PrefabInstance:
       propertyPath: _movementType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2106141587176898540, guid: fa8f5b5530e591a4f93638bba97188e3, type: 3}
+      propertyPath: m_TagString
+      value: CantDestroyBall
+      objectReference: {fileID: 0}
     - target: {fileID: 2471606856918432007, guid: fa8f5b5530e591a4f93638bba97188e3, type: 3}
       propertyPath: m_Name
       value: TranslationCube
