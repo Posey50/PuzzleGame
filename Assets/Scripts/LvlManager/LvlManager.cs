@@ -27,12 +27,6 @@ public class LvlManager : MonoBehaviour
     public int CurrentNbrOfLife { get; private set; }
 
     /// <summary>
-    /// Window where results are showed.
-    /// </summary>
-    [SerializeField]
-    private GameObject _resultWindow;
-
-    /// <summary>
     /// A value indicating that the game is over.
     /// </summary>
     private bool _gameIsOver;
@@ -42,6 +36,7 @@ public class LvlManager : MonoBehaviour
     /// </summary>
     public delegate void LvlDelegate();
     public event LvlDelegate NeedABall;
+    public event LvlDelegate GameLost;
 
     /// <summary>
     /// Event to indicate remaining lifes.
@@ -66,8 +61,16 @@ public class LvlManager : MonoBehaviour
     private void Start()
     {
         CurrentNbrOfLife = NbrOfLife;
-        NewNumberOfLifes?.Invoke(CurrentNbrOfLife);
+        HUDManager.Instance.CountdownEnded += ActualiseUIAtTheEnOfTheCountdown;
         LvlArrival.Instance.EndReached += Win;
+    }
+
+    /// <summary>
+    /// Called to actualise the number of life when countdown is ended.
+    /// </summary>
+    private void ActualiseUIAtTheEnOfTheCountdown()
+    {
+        NewNumberOfLifes?.Invoke(CurrentNbrOfLife);
     }
 
     /// <summary>
@@ -96,7 +99,6 @@ public class LvlManager : MonoBehaviour
     private void Win()
     {
         _gameIsOver = true;
-        _resultWindow.SetActive(true);
     }
 
     /// <summary>
@@ -105,6 +107,6 @@ public class LvlManager : MonoBehaviour
     private void Loose()
     {
         _gameIsOver = true;
-        Debug.Log("Loose");
+        GameLost?.Invoke();
     }
 }

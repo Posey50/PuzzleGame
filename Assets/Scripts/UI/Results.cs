@@ -10,24 +10,22 @@ public class Results : MonoBehaviour
     [SerializeField]
     private List<GameObject> _stars = new ();
 
-    private void Start()
-    {
-        CalculateResults();
-    }
+    /// <summary>
+    /// Number of stars won by the player.
+    /// </summary>
+    private int _numberOfStars;
 
     /// <summary>
     /// Called to calculate the number of stars.
     /// </summary>
     private void CalculateResults()
     {
-        int numberOfStars = 1;
-
         LvlManager lvlManager = LvlManager.Instance;
 
         // Checks remaining lifes
         if (lvlManager.CurrentNbrOfLife == lvlManager.NbrOfLife)
         {
-            numberOfStars++;
+            _numberOfStars++;
         }
 
         List<int> chrono = ChronoManager.Instance.GetChrono();
@@ -35,32 +33,40 @@ public class Results : MonoBehaviour
         // Checks chrono
         if (chrono[0] < lvlManager.Minutes)
         {
-            numberOfStars++;
+            _numberOfStars++;
         }
         else if (chrono[0] == lvlManager.Minutes)
         {
             if (chrono[1] < lvlManager.Seconds)
             {
-                numberOfStars++;
+                _numberOfStars++;
             }
             else if (chrono[1] == lvlManager.Seconds)
             {
                 if (chrono[2] == 0)
                 {
-                    numberOfStars++;
+                    _numberOfStars++;
                 }
             }
         }
-
-        StartCoroutine(ShowStars(numberOfStars));
     }
 
     /// <summary>
-    /// Called to show stars in results.
+    /// Called to show stars on screen.
     /// </summary>
-    /// <param name="nbrOfStars"> Number of stars to show. </param>
+    public void ShowStars()
+    {
+        _numberOfStars = 1;
+        CalculateResults();
+        StartCoroutine(DisplayStars(_numberOfStars));
+    }
+
+    /// <summary>
+    /// Called to display stars one by one.
+    /// </summary>
+    /// <param name="nbrOfStars"> Number of stars to display. </param>
     /// <returns></returns>
-    private IEnumerator ShowStars(int nbrOfStars)
+    private IEnumerator DisplayStars(int nbrOfStars)
     {
         for (int i = 0; i < nbrOfStars; i++)
         {
