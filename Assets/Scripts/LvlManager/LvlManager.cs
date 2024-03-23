@@ -33,6 +33,11 @@ public class LvlManager : MonoBehaviour
     private GameObject _resultWindow;
 
     /// <summary>
+    /// A value indicating that the game is over.
+    /// </summary>
+    private bool _gameIsOver;
+
+    /// <summary>
     /// Event to indicate lvl state.
     /// </summary>
     public delegate void LvlDelegate();
@@ -62,7 +67,7 @@ public class LvlManager : MonoBehaviour
     {
         CurrentNbrOfLife = NbrOfLife;
         NewNumberOfLifes?.Invoke(CurrentNbrOfLife);
-        LvlArrival.Instance.EndReached += GameIsOver;
+        LvlArrival.Instance.EndReached += Win;
     }
 
     /// <summary>
@@ -70,23 +75,36 @@ public class LvlManager : MonoBehaviour
     /// </summary>
     public void RespawnABall()
     {
-        if (CurrentNbrOfLife - 1 >= 0)
+        if (!_gameIsOver)
         {
-            CurrentNbrOfLife--;
-            NewNumberOfLifes?.Invoke(CurrentNbrOfLife);
-            NeedABall?.Invoke();
-        }
-        else
-        {
-            GameIsOver();
+            if (CurrentNbrOfLife - 1 >= 0)
+            {
+                CurrentNbrOfLife--;
+                NewNumberOfLifes?.Invoke(CurrentNbrOfLife);
+                NeedABall?.Invoke();
+            }
+            else
+            {
+                Loose();
+            }
         }
     }
 
     /// <summary>
-    /// Called when the game is over to show result window.
+    /// Called when the game is lost.
     /// </summary>
-    private void GameIsOver()
+    private void Win()
     {
+        _gameIsOver = true;
         _resultWindow.SetActive(true);
+    }
+
+    /// <summary>
+    /// Called when the game is lost.
+    /// </summary>
+    private void Loose()
+    {
+        _gameIsOver = true;
+        Debug.Log("Loose");
     }
 }

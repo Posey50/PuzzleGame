@@ -10,12 +10,6 @@ public class PlayButton : MonoBehaviour
     /// </summary>
     private Button _button;
 
-    /// <summary>
-    /// Name of the first lvl.
-    /// </summary>
-    [SerializeField]
-    private string _firstLvlName;
-
     private void Awake()
     {
         _button = GetComponent<Button>();
@@ -37,6 +31,6 @@ public class PlayButton : MonoBehaviour
     private IEnumerator WaitToLaunch()
     {
         yield return new WaitForSeconds(MainMenuManager.Instance.PlayMainFadeOut());
-        SceneManager.LoadScene(_firstLvlName);
+        SceneManager.LoadScene("Level1");
     }
 }
