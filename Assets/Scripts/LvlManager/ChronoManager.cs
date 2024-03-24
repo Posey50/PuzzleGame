@@ -45,7 +45,15 @@ public class ChronoManager : MonoBehaviour
         _nbrOfSeconds = 0;
         _nbrOfMinutes = 0;
 
+        HUDManager.Instance.CountdownEnded += StartChrono;
         LvlArrival.Instance.EndReached += StopChrono;
+    }
+
+    /// <summary>
+    /// Called to start the chrono.
+    /// </summary>
+    private void StartChrono()
+    {
         _increaseChrono = StartCoroutine(IncreaseChrono());
     }
 

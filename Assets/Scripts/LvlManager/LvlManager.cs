@@ -27,16 +27,16 @@ public class LvlManager : MonoBehaviour
     public int CurrentNbrOfLife { get; private set; }
 
     /// <summary>
-    /// Window where results are showed.
+    /// A value indicating that the game is over.
     /// </summary>
-    [SerializeField]
-    private GameObject _resultWindow;
+    private bool _gameIsOver;
 
     /// <summary>
     /// Event to indicate lvl state.
     /// </summary>
     public delegate void LvlDelegate();
     public event LvlDelegate NeedABall;
+    public event LvlDelegate GameLost;
 
     /// <summary>
     /// Event to indicate remaining lifes.
@@ -61,8 +61,16 @@ public class LvlManager : MonoBehaviour
     private void Start()
     {
         CurrentNbrOfLife = NbrOfLife;
+        HUDManager.Instance.CountdownEnded += ActualiseUIAtTheEnOfTheCountdown;
+        LvlArrival.Instance.EndReached += Win;
+    }
+
+    /// <summary>
+    /// Called to actualise the number of life when countdown is ended.
+    /// </summary>
+    private void ActualiseUIAtTheEnOfTheCountdown()
+    {
         NewNumberOfLifes?.Invoke(CurrentNbrOfLife);
-        LvlArrival.Instance.EndReached += GameIsOver;
     }
 
     /// <summary>
@@ -70,23 +78,35 @@ public class LvlManager : MonoBehaviour
     /// </summary>
     public void RespawnABall()
     {
-        if (CurrentNbrOfLife - 1 >= 0)
+        if (!_gameIsOver)
         {
-            CurrentNbrOfLife--;
-            NewNumberOfLifes?.Invoke(CurrentNbrOfLife);
-            NeedABall?.Invoke();
-        }
-        else
-        {
-            GameIsOver();
+            if (CurrentNbrOfLife - 1 >= 0)
+            {
+                CurrentNbrOfLife--;
+                NewNumberOfLifes?.Invoke(CurrentNbrOfLife);
+                NeedABall?.Invoke();
+            }
+            else
+            {
+                Loose();
+            }
         }
     }
 
     /// <summary>
-    /// Called when the game is over to show result window.
+    /// Called when the game is lost.
     /// </summary>
-    private void GameIsOver()
+    private void Win()
     {
-        _resultWindow.SetActive(true);
+        _gameIsOver = true;
+    }
+
+    /// <summary>
+    /// Called when the game is lost.
+    /// </summary>
+    private void Loose()
+    {
+        _gameIsOver = true;
+        GameLost?.Invoke();
     }
 }

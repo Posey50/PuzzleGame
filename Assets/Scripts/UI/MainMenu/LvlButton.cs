@@ -14,7 +14,7 @@ public class LvlButton : MonoBehaviour
     /// Name of the lvl to launch.
     /// </summary>
     [SerializeField]
-    private string _lvlName;
+    private int _lvlNumber;
 
     private void Awake()
     {
@@ -36,6 +36,6 @@ public class LvlButton : MonoBehaviour
     private IEnumerator WaitFadeOut()
     {
         yield return new WaitForSeconds(MainMenuManager.Instance.PlayMapFadeOut());
-        SceneManager.LoadScene(_lvlName);
+        SceneManager.LoadScene("Level" + _lvlNumber.ToString());
     }
 }
