@@ -10,8 +10,8 @@ public class BallSpawner : MonoBehaviour
 
     private void Start()
     {
+        HUDManager.Instance.CountdownEnded += SpawnABall;
         LvlManager.Instance.NeedABall += SpawnABall;
-        SpawnABall();
     }
 
     public void SpawnABall()
