@@ -7,6 +7,12 @@ public class LvlArrival : MonoBehaviour
     public static LvlArrival Instance => _instance;
 
     /// <summary>
+    /// Particles to play when ball reached the end.
+    /// </summary>
+    [SerializeField]
+    private ParticleSystem _starsParticles;
+
+    /// <summary>
     /// Events to indicate that the ball has reach the end.
     /// </summary>
     public delegate void ArrivalDelegate();
@@ -31,6 +37,7 @@ public class LvlArrival : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             EndReached?.Invoke();
+            _starsParticles.Play();
         }
     }
 }
