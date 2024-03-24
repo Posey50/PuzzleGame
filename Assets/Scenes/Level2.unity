@@ -7782,8 +7782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed4e41c7938aa447a7170c58ee85cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Minutes>k__BackingField: 1
-  <Seconds>k__BackingField: 0
+  <Minutes>k__BackingField: 0
+  <Seconds>k__BackingField: 18
   <NbrOfLife>k__BackingField: 5
 --- !u!4 &1523607607 stripped
 Transform:
