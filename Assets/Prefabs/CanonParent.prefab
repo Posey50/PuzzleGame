@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 598982839965523173}
   m_Layer: 6
   m_Name: CanonParent
-  m_TagString: Untagged
+  m_TagString: CantDestroyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 9031638416871349562}
   m_Layer: 6
   m_Name: CanonTranslation
-  m_TagString: Untagged
+  m_TagString: CantDestroyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab73dfbb3c798644c9dcbbf83f50392c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ObjectAffected>k__BackingField: {fileID: 0}
 --- !u!114 &2826559038454081858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +135,7 @@ GameObject:
   - component: {fileID: 3690094654581985376}
   m_Layer: 6
   m_Name: Canon
-  m_TagString: Untagged
+  m_TagString: CantDestroyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -305,7 +306,7 @@ GameObject:
   - component: {fileID: 3547412020775272440}
   m_Layer: 6
   m_Name: BallSocket
-  m_TagString: Untagged
+  m_TagString: CantDestroyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
