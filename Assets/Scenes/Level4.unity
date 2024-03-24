@@ -150,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1338600120639168096, guid: 78c1efc6cdcb46743a070ec8e53a9968, type: 3}
       propertyPath: _speed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1338600120639168096, guid: 78c1efc6cdcb46743a070ec8e53a9968, type: 3}
       propertyPath: _movementType
@@ -13695,7 +13695,7 @@ Transform:
   m_GameObject: {fileID: 1413062339}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.47, y: 13.456001, z: 0}
+  m_LocalPosition: {x: -9.47, y: 14.553, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13983,7 +13983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed4e41c7938aa447a7170c58ee85cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Minutes>k__BackingField: 2
+  <Minutes>k__BackingField: 1
   <Seconds>k__BackingField: 0
   <NbrOfLife>k__BackingField: 5
 --- !u!1001 &1529885209
@@ -14567,7 +14567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4066458990267109372, guid: 78c1efc6cdcb46743a070ec8e53a9968, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.94
+      value: 14.992546
       objectReference: {fileID: 0}
     - target: {fileID: 4066458990267109372, guid: 78c1efc6cdcb46743a070ec8e53a9968, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14956,7 +14956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4066458990267109372, guid: 78c1efc6cdcb46743a070ec8e53a9968, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.757453
+      value: 18.81
       objectReference: {fileID: 0}
     - target: {fileID: 4066458990267109372, guid: 78c1efc6cdcb46743a070ec8e53a9968, type: 3}
       propertyPath: m_LocalPosition.z
