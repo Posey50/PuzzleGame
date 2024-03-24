@@ -115,7 +115,10 @@ public class HUDManager : MonoBehaviour
         _pauseMenuButton.onClick.AddListener(PauseGoBackToMenu);
 
         LvlArrival.Instance.EndReached += ShowResults;
-        _nextLvlButton.onClick.AddListener(GoToNextLvl);
+        if (_nextLvlButton != null)
+        {
+            _nextLvlButton.onClick.AddListener(GoToNextLvl);
+        }
         _resultsRetryButton.onClick.AddListener(ResultsRetry);
         _resultsMenuButton.onClick.AddListener(ResultsGoBackToMenu);
 
