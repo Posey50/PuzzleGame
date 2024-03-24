@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1000
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
       name: Tex_Bouton_0
       rect:
         serializedVersion: 2
-        x: 162
-        y: 471
-        width: 1596
-        height: 978
+        x: 51
+        y: 118
+        width: 399
+        height: 244
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 156, y: 153, z: 158, w: 151}
+      border: {x: 39, y: 36, z: 37, w: 38}
       outline: []
       physicsShape: []
       tessellationDetail: 0
