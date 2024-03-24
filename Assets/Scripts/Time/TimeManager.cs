@@ -90,27 +90,28 @@ public class TimeManager : MonoBehaviour
     {
         _timeScale = 1f;
 
+        for (int i = 0; i < _objectsAffectedByTime.Count; i++)
+        {
+            TimeChanged += _objectsAffectedByTime[i].SetSpeed;
+            if (_objectsAffectedByTime[i].ObjectAffected != null)
+            {
+                _objectsAffectedByTime[i].ObjectAffected.material = _goldMaterial;
+            }
+        }
+        for (int i = 0; i < _objectsNotAffectedByTime.Count; i++)
+        {
+            _objectsNotAffectedByTime[i].GetComponent<ObjectAffectedByTime>().SetSpeed(1f);
+            if (_objectsNotAffectedByTime[i].ObjectAffected != null)
+            {
+                _objectsNotAffectedByTime[i].ObjectAffected.material = _diamondMaterial;
+            }
+        }
+
         switch (_timeType.ToString())
         {
             case "Constant":
-                for (int i = 0; i < _objectsAffectedByTime.Count; i++)
-                {
-                    TimeChanged += _objectsAffectedByTime[i].SetSpeed;
-                    _objectsAffectedByTime[i].ObjectAffected.material = _goldMaterial;
-                }
                 break;
             case "Alternate":
-                for (int i = 0; i < _objectsAffectedByTime.Count; i++)
-                {
-                    TimeChanged += _objectsAffectedByTime[i].SetSpeed;
-                    _objectsAffectedByTime[i].ObjectAffected.material = _goldMaterial;
-                }
-                for (int i = 0; i < _objectsNotAffectedByTime.Count; i++)
-                {
-                    _objectsNotAffectedByTime[i].GetComponent<ObjectAffectedByTime>().SetSpeed(1f);
-                    _objectsNotAffectedByTime[i].ObjectAffected.material = _diamondMaterial;
-                }
-
                 StartCoroutine(TimeAlternate());
                 break;
         }
